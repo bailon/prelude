@@ -77,8 +77,13 @@
 
 
 
-;; org-bullets is fun!
+;; org-bullets
 (prelude-require-package 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
+
+;; snippets
+(prelude-require-package 'yasnippet)
+(yas-global-mode 1)
 
 (provide 'personal)

@@ -147,7 +147,7 @@ by Prelude.")
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (yari zop-to-char zenburn-theme yasnippet web-mode volatile-highlights undo-tree smex smartrep smartparens ruby-tools rainbow-mode rainbow-delimiters projectile ov org-bullets operate-on-number move-text magit json-mode js2-mode ido-ubiquitous guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck flx-ido expand-region elisp-slime-nav easy-kill discover-my-major diminish diff-hl company cider browse-kill-ring anzu ace-window ac-inf-ruby))))
+    (zop-to-char zenburn-theme volatile-highlights undo-tree smartrep smartparens operate-on-number move-text magit projectile ov guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl easy-kill diminish diff-hl discover-my-major dash browse-kill-ring anzu ace-window))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

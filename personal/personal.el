@@ -46,7 +46,8 @@
  (lambda ()
    (visual-line-mode 1)
    (whitespace-mode -1)
-   (set-visual-wrap-column 80)))
+   ;;(set-visual-wrap-column 80)
+   ))
 
 
 ;; disable flycheck on org-mode
@@ -79,6 +80,6 @@
 
 
 ;; date translation name
-(setq system-time-locale "C")
+;; (setq system-time-locale "C")
 
 (provide 'personal)

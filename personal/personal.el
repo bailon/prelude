@@ -14,7 +14,6 @@
 
 
 
-
 ;; Hack for setting a fixed wrap column in visual-line-mode.
 ;; Copied from ohai-emacs
 (defun set-visual-wrap-column (new-wrap-column &optional buffer)
@@ -38,16 +37,8 @@
         (setq windows (cdr windows))))))
 
 (defun update-visual-wrap-column ()
-  (if (not visual-wrap-column)
-      (set-window-margins nil nil)
-    (let* ((current-margins (window-margins))
-           (right-margin (or (cdr current-margins) 0))
-           (current-width (window-width))
-           (current-available (+ current-width right-margin)))
-      (if (<= current-available visual-wrap-column)
-          (set-window-margins nil (car current-margins))
-        (set-window-margins nil (car current-margins)
-                            (- current-available visual-wrap-column))))))
+  if (not visual-wrap-column)
+  (set-window-margins nil nil))
 
 ;; ...and make it available for org-mode
 (add-hook
@@ -85,5 +76,9 @@
 ;; snippets
 (prelude-require-package 'yasnippet)
 (yas-global-mode 1)
+
+
+;; date translation name
+(setq system-time-locale "C")
 
 (provide 'personal)

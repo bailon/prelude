@@ -46,7 +46,7 @@
  (lambda ()
    (visual-line-mode 1)
    (whitespace-mode -1)
-   ;;(set-visual-wrap-column 80)
+;;   (set-visual-wrap-column 80)
    ))
 
 
@@ -80,6 +80,7 @@
 
 
 ;; date translation name
-;; (setq system-time-locale "C")
+(setq system-time-locale (getenv "LANG"))
+
 
 (provide 'personal)

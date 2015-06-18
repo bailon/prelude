@@ -83,4 +83,15 @@
 (setq system-time-locale (getenv "LANG"))
 
 
+;; org-babel
+(custom-set-variables
+ '(org-babel-load-languages (quote ((emacs-lisp . t)
+                                    (python . t)
+                                    (clojure . t)
+                                    (sql . t)
+                                    (sh . t))))
+ '(org-confirm-babel-evaluate nil)) 
+
+
+
 (provide 'personal)

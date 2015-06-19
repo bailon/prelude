@@ -1,13 +1,26 @@
-;; i've read magit instructions...
+;;; personal.el --- Personal configurations for Emacs Prelude
+;;
+;; Author: Bruno Merino-Bailón <merino.bailon@gmail.com>
+;;
+
+;;; Commentary:
+;;
+;; A lot of small tweaks to make my experience on Emacs more pleasant.
+;; I'm still getting the gist of using Emacs and learning the basics
+;; of Lisp. I'm still doing a lot of copy/paste of functions I found
+;; on the internet.
+;;
+
+;; Magit -------------------------------------------------------------
 (setq magit-last-seen-setup-instructions "1.4.0")
 
 
-;; personal information
+;; Personal Information ----------------------------------------------
 (setq user-mail-address "merino.bailon@gmail.com")
 (setq user-full-name "Bruno Merino-Bailón")
 
 
-;; small tweaks on the ui
+;; UI Tweaks ---------------------------------------------------------
 (scroll-bar-mode -1)
 (global-hl-line-mode -1)
 (load-theme 'wombat)
@@ -15,7 +28,7 @@
 
 
 ;; Hack for setting a fixed wrap column in visual-line-mode.
-;; Copied from ohai-emacs
+;; Source: ohai-emacs
 (defun set-visual-wrap-column (new-wrap-column &optional buffer)
   "Force visual line wrap at NEW-WRAP-COLUMN in BUFFER (defaults
     to current buffer) by setting the right-hand margin on every
@@ -46,44 +59,44 @@
  (lambda ()
    (visual-line-mode 1)
    (whitespace-mode -1)
-;;   (set-visual-wrap-column 80)
+   ;;   (set-visual-wrap-column 80)
    ))
 
 
-;; disable flycheck on org-mode
+;; disable flycheck on org-mode --------------------------------------
 ;;(setq-default flycheck-disabled-checkers
 ;;              (append flycheck-disabled-checkers 'org-mode))
 
 
 
 
-;; line numbers
+;; line numbers ------------------------------------------------------
 ;; (require 'linum)
 ;; (global-linum-mode 1)
 ;; (setq linum-format " %3d ")
 
 
-;; start in fullscreen
+;; fullscreen --------------------------------------------------------
 (custom-set-variables
  '(initial-frame-alist (quote ((fullscreen . maximized)))))
 
 
 
-;; org-bullets
+;; org-bullets -------------------------------------------------------
 (prelude-require-package 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
 
-;; snippets
+;; snippets ----------------------------------------------------------
 (prelude-require-package 'yasnippet)
 (yas-global-mode 1)
 
 
-;; date translation name
+;; date translation --------------------------------------------------
 (setq system-time-locale (getenv "LANG"))
 
 
-;; org-babel
+;; org-babel ---------------------------------------------------------
 (custom-set-variables
  '(org-babel-load-languages (quote ((emacs-lisp . t)
                                     (python . t)
@@ -93,6 +106,7 @@
  '(org-confirm-babel-evaluate nil))
 
 
+;; org-mode - code block color ---------------------------------------
 (defface org-block-begin-line
   '((t (:underline "#A7A6AA" :foreground "#FFFFFF" :background "#1b1b1b")))
   "Face used for the line delimiting the begin of source blocks.")
@@ -106,5 +120,5 @@
   "Face used for the line delimiting the end of source blocks.")
 
 
-
+;; technical artifacts -----------------------------------------------
 (provide 'personal)

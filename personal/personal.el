@@ -90,7 +90,20 @@
                                     (clojure . t)
                                     (sql . t)
                                     (sh . t))))
- '(org-confirm-babel-evaluate nil)) 
+ '(org-confirm-babel-evaluate nil))
+
+
+(defface org-block-begin-line
+  '((t (:underline "#A7A6AA" :foreground "#FFFFFF" :background "#1b1b1b")))
+  "Face used for the line delimiting the begin of source blocks.")
+
+(defface org-block-background
+  '((t (:background "#666666")))
+  "Face used for the source block background.")
+
+(defface org-block-end-line
+  '((t (:overline "#A7A6AA" :foreground "#FFFFFF" :background "#1b1b1b")))
+  "Face used for the line delimiting the end of source blocks.")
 
 
 

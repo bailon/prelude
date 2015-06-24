@@ -11,6 +11,11 @@
 ;; on the internet.
 ;;
 
+
+;; Require Packages --------------------------------------------------
+(prelude-require-packages
+ '(ace-jump-mode org-bullets yasnippet))
+
 ;; Magit -------------------------------------------------------------
 (setq magit-last-seen-setup-instructions "1.4.0")
 
@@ -22,6 +27,7 @@
 
 ;; Keybindings -------------------------------------------------------
 (global-set-key (kbd "C-x w") 'ace-window)
+(global-set-key (kbd "C-x j") 'ace-jump-mode)
 
 
 ;; UI Tweaks ---------------------------------------------------------
@@ -31,8 +37,6 @@
 
 
 ;; Org-Mode ----------------------------------------------------------
-(prelude-require-package 'org-bullets)
-
 (add-hook
  'org-mode-hook
  (lambda ()
@@ -56,9 +60,7 @@
  '(initial-frame-alist (quote ((fullscreen . maximized)))))
 
 
-
 ;; Snippets ----------------------------------------------------------
-(prelude-require-package 'yasnippet)
 (yas-global-mode 1)
 
 

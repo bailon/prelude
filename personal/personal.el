@@ -92,5 +92,33 @@
   "Face used for the line delimiting the end of source blocks.")
 
 
+;;; Clojure Mode -----------------------------------------------------
+;; Snippets from: https://github.com/howardabrams/dot-files/
+(add-hook 'clojure-mode-hook
+          '(lambda ()
+             ;; Two under-bars are used as "stuff to do" in the Koans
+             (highlight-phrase "__" 'hi-red-b)))
+
+(defun clojure-next-issue ()
+  (interactive)
+  (search-forward "__")
+  (set-mark (- (point) 2))
+  (setq mark-alive t))
+
+(global-set-key (kbd "<f2> q") 'clojure-next-issue)
+
+(when (fboundp 'global-prettify-symbols-mode)
+  (defconst clojure--prettify-symbols-alist
+    '(("fn"  . ?λ)
+      ("->" . ?→)
+      ("->>" . ?⇉)
+      ("<=" . ?≤)
+      (">=" . ?≥)
+      ("==" . ?≡)    ;; Do I like this?
+      ("not=" . ?≠)  ;; Or even this?
+      ("." . ?•)
+      ("__" . ?⁈))))
+
+
 ;; Technical Artifacts -----------------------------------------------
 (provide 'personal)

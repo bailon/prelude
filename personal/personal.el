@@ -20,6 +20,10 @@
 (setq user-full-name "Bruno Merino-Bailón")
 
 
+;; Keybindings -------------------------------------------------------
+(global-set-key (kbd "C-x w") 'ace-window)
+
+
 ;; UI Tweaks ---------------------------------------------------------
 (scroll-bar-mode -1)
 (global-hl-line-mode -1)
